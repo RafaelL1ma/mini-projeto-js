@@ -15,4 +15,4 @@ const User = db.sequelize.define("user", {
 module.exports = User;
 
 //criando tabela user no banco
-User.sync({ force: true });
+//User.sync({ force: true });
