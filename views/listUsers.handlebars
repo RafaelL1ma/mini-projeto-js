@@ -1,0 +1,16 @@
+<table border="1px">
+    <tr>
+        <td>Nome</td>
+        <td>Idade</td>
+        <td>Email</td>
+        <td>Ações</td>
+    </tr>
+{{#each user}}
+    <tr>
+        <td>{{dataValues.name}}</td>
+        <td>{{dataValues.age}}</td>
+        <td>{{dataValues.email}}</td>
+        <td><button>Deletar</button></td>
+    </tr>
+{{/each}}
+</table>
