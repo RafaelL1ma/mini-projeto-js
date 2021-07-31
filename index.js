@@ -37,7 +37,10 @@ app.post("/user-new", function (req, res) {
     })
 })
 app.get("/list-user", function (req, res) {
-    res.render("listUsers");
+    User.findAll().then(function (user) {
+        res.render("listUsers", { user: user });
+    })
+
 })
 
 app.listen("8080", function () {
