@@ -36,6 +36,13 @@ app.post("/user-new", function (req, res) {
         res.send("Houve um erro: " + erro);
     })
 })
+app.get("/delete/:id", function (req, res) {
+    User.destroy({ where: { "id": req.params.id } }).then(function () {
+        res.redirect("/list-user");
+    }).catch(function () {
+        res.send("Usuário já deletado ou inexistente!");
+    })
+})
 app.get("/list-user", function (req, res) {
     User.findAll().then(function (user) {
         res.render("listUsers", { user: user });
